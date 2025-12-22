@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Scriptfile, must be sourced
+#
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    echo "Error: This script must be SOURCED, not executed."
+    echo "Usage: source ./$(basename "$0")"
+    exit 1
+fi
+export TF_VAR_tenancy_ocid="add OCID of tenancy, root compartment"
+export TF_VAR_region="Your region"
+export TF_VAR_user_ocid="OCID of user owning the API key"
+export TF_VAR_fingerprint="PI Key fingerprint"
+export TF_VAR_private_key_path="path to private key file"
+unset TF_VAR_private_key_password
+#export TF_VAR_private_key_password="if teh private key file is protected with passphrase, add passphare her"
+export TF_VAR_lzroot_ocid="precreated comparment holding the landingzone, enter OCID here. If tenancy root is used, enter tenancy_ocid"
+export TF_VAR_domain_admin_email=""
+export TF_VAR_domain_admin_first_name="name"
+export TF_VAR_domain_admin_last_name="name"
+export TF_VAR_domain_admin_user_name="username for Domain logon"
+#
+alias tfplan="terraform plan"
+alias tfapply="terraform apply"
+alias tfdestroy="terraform destroy"
+
+

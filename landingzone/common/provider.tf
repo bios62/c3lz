@@ -2,7 +2,7 @@ terraform {
   required_providers {
     oci = {
       source  = "oracle/oci"
-      version = ">= 4.0.0"
+      version = ">=4.67.3"
     }
   }
 }
@@ -13,4 +13,5 @@ provider "oci" {
   fingerprint      = var.fingerprint
   private_key_path = var.private_key_path
   region           = var.region
+  private_key_password = var.private_key_password
 }
